@@ -1,8 +1,0 @@
-<% @pins.each  do  |pin|  %>
-  <% if  pin.image.present?  %>
-    <%=  image_tag(pin.image.thumb.url, class: "thumbnail")  %>
-  <% else %>
-    <%=  image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-  <%  end %>
-  <h2><%=  link_to  pin.title, pin %></h2>
-<%  end  %>

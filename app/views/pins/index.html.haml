@@ -1,0 +1,13 @@
+#pins.transitions-enabled
+  - @pins.each do |pin|
+    .box.panel.panel-default
+      - if  pin.image.present?
+        = link_to (image_tag  pin.image.thumb.url), pin
+      - else
+        = image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail")
+
+    .panel-body
+      %h2= link_to pin.title, pin
+      %p
+      Submitted by
+      = pin.user.email
