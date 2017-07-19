@@ -13,4 +13,10 @@
   .form-group
   = f.input :description, input_html: { class: "form-control" }
 
+  - if  @pin.image.present?
+    = image_tag(@pin.image.thumb.url)
+
+  .form-group
+  = f.input  :image, as: :file
+
   = f.button :submit, class: "btn  btn-default"
