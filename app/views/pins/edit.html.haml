@@ -1,4 +1,13 @@
-.col-md-6.col-md-offset-3
-  %h1  Edit  form
-  =  render  "form"
-  =  link_to  "cancel", pin_path
+#edit_page.col-md-8.col-md-offset-2
+.row
+.panel.panel-default
+.panel-heading
+  %h1  Edit Your  Pin
+.panel-body
+.current_image
+  %strong.center  Current  Image
+  - if  @pin.image.present?
+    = image_tag(@pin.image.thumb.url)
+
+=  render  "form"
+=  link_to  "cancel", pin_path
